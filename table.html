@@ -28,26 +28,17 @@
 		<h3>Значение по оси OX</h3>
 		<ul>
 			<li>
-				<input type="radio">Название
-			</li>
-			<li>
-				<input type="radio">Цена
-			</li>
-			<li>
-				<input type="radio">Дата окончания
+				<input type="radio">Наименование акции
 			</li>
 		</ul>
 
 		<h3>Результат</h3>
 		<ul>
 			<li>
-				<input type="checkbox">Цена
+				<input type="checkbox">Максимальная Цена
 			</li>
 			<li>
-				<input type="checkbox">Название
-			</li>
-			<li>
-				<input type="checkbox">Дата окончания
+				<input type="checkbox">Количество покупок
 			</li>
 		</ul>
 
@@ -104,32 +95,35 @@
 	<details>
 		<summary>Сортировка</summary>
 		<p>
-			По цене:
-			<select name="sort-by-price">
-				<option value="yes">Да</option>
-				<option value="no">Нет</option>
+			Первый уровень:
+			<select name="sort-value">
+				<option value="price">Цена</option>
+				<option value="date">Дата окончания</option>
+				<option value="name">Наименование акции</option>
 			</select>
 			По убыванию?
 			<input type="checkbox">
 		</p>
 
 		<p>
-			По дате окончания:
-			<select name="sort-by-capitalization">
-				<option value="yes">Да</option>
-				<option value="no">Нет</option>
+			Второй уровень:
+			<select name="sort-value">
+				<option value="price">Цена</option>
+				<option value="date">Дата окончания</option>
+				<option value="name">Наименование акции</option>
 			</select>
 			По убыванию?
 			<input type="checkbox">
 		</p>
 
 		<p>
-			По алфавиту:
-			<select name="sort-by-alphabet">
-				<option value="yes">Да</option>
-				<option value="no">Нет</option>
+			Третий уровень:
+			<select name="sort-value">
+				<option value="price">Цена</option>
+				<option value="date">Дата окончания</option>
+				<option value="name">Наименование акции</option>
 			</select>
-			В обратном порядке?
+			По убыванию?
 			<input type="checkbox">
 		</p>
 
@@ -139,258 +133,309 @@
 	<table border="1" cellspacing="0">
         <tr>
             <th>Наименование акции</th>
-            <th>Цена</th>
+            <th>Цена$</th>
             <th>Дата окончания</th>
+            <th>Количество покупок, тыс</th>
         </tr>
 		<tr>
-            <td>Акция 1</td>
-            <td>$100</td>
+            <td>ВТБ</td>
+            <td>100</td>
             <td>2023-12-31</td>
+            <td>3,21</td>
         </tr>
         <tr>
-            <td>Акция 2</td>
-            <td>$75</td>
+            <td>ВТБ</td>
+            <td>75</td>
             <td>2023-11-30</td>
+            <td>4,21</td>
         </tr>
         <tr>
-            <td>Акция 3</td>
-            <td>$50</td>
+            <td>ВТБ</td>
+            <td>50</td>
             <td>2023-10-31</td>
+            <td>2,21</td>
         </tr>
         <tr>
-            <td>Акция 4</td>
-            <td>$120</td>
+            <td>Сбер</td>
+            <td>120</td>
             <td>2023-09-30</td>
+            <td>8,21</td>
         </tr>
         <tr>
-            <td>Акция 5</td>
-            <td>$60</td>
+            <td>ДНС</td>
+            <td>60</td>
             <td>2023-08-31</td>
+            <td>21,21</td>
         </tr>
         <tr>
-            <td>Акция 6</td>
-            <td>$85</td>
+            <td>ВТБ</td>
+            <td>85</td>
             <td>2023-07-31</td>
+            <td>1,21</td>
         </tr>
         <tr>
-            <td>Акция 7</td>
-            <td>$110</td>
+            <td>Сбер</td>
+            <td>110</td>
             <td>2023-06-30</td>
+            <td>4,21</td>
         </tr>
         <tr>
-            <td>Акция 8</td>
-            <td>$70</td>
+            <td>ДНС</td>
+            <td>70</td>
             <td>2023-05-31</td>
+            <td>1,21</td>
         </tr>
         <tr>
-            <td>Акция 9</td>
-            <td>$95</td>
+            <td>ВТБ</td>
+            <td>95</td>
             <td>2023-04-30</td>
+            <td>4,21</td>
         </tr>
         <tr>
-            <td>Акция 10</td>
-            <td>$55</td>
+            <td>ДНС</td>
+            <td>55</td>
             <td>2023-03-31</td>
+            <td>4,21</td>
         </tr>
         <tr>
-            <td>Акция 11</td>
-            <td>$130</td>
+            <td>Сбер</td>
+            <td>0</td>
             <td>2023-02-28</td>
+            <td>4,91</td>
         </tr>
         <tr>
-            <td>Акция 12</td>
-            <td>$65</td>
+            <td>ВТБ</td>
+            <td>65</td>
             <td>2023-01-31</td>
+            <td>1,21</td>
         </tr>
         <tr>
-            <td>Акция 13</td>
-            <td>$75</td>
+            <td>Сбер</td>
+            <td>75</td>
             <td>2022-12-31</td>
+            <td>9,21</td>
         </tr>
         <tr>
-            <td>Акция 14</td>
-            <td>$40</td>
+            <td>ВТБ</td>
+            <td>40</td>
             <td>2022-11-30</td>
+            <td>4,21</td>
         </tr>
         <tr>
-            <td>Акция 15</td>
-            <td>$90</td>
+            <td>ДНС</td>
+            <td>90</td>
             <td>2022-10-31</td>
+            <td>4,21</td>
         </tr>
         <tr>
-            <td>Акция 16</td>
-            <td>$55</td>
+            <td>Сбер</td>
+            <td>55</td>
             <td>2022-09-30</td>
+            <td>6,21</td>
         </tr>
         <tr>
-            <td>Акция 17</td>
-            <td>$70</td>
+            <td>Сбер</td>
+            <td>70</td>
             <td>2022-08-31</td>
+            <td>6,21</td>
         </tr>
         <tr>
-            <td>Акция 18</td>
-            <td>$115</td>
+            <td>Сбер</td>
+            <td>115</td>
             <td>2022-07-31</td>
+            <td>6,21</td>
         </tr>
         <tr>
-            <td>Акция 19</td>
-            <td>$80</td>
+            <td>ДНС</td>
+            <td>80</td>
             <td>2022-06-30</td>
+            <td>6,21</td>
         </tr>
         <tr>
-            <td>Акция 20</td>
-            <td>$105</td>
+            <td>Сбер</td>
+            <td>105</td>
             <td>2022-05-31</td>
+            <td>6,21</td>
         </tr>
         <tr>
-            <td>Акция 21</td>
-            <td>$60</td>
+            <td>ВТБ</td>
+            <td>60</td>
             <td>2022-04-30</td>
+            <td>6,21</td>
         </tr>
         <tr>
-            <td>Акция 22</td>
-            <td>$85</td>
+            <td>ВТБ</td>
+            <td>85</td>
             <td>2022-03-31</td>
+            <td>6,21</td>
         </tr>
         <tr>
-            <td>Акция 23</td>
-            <td>$70</td>
+            <td>ДНС</td>
+            <td>70</td>
             <td>2022-02-28</td>
+            <td>1,21</td>
         </tr>
         <tr>
-            <td>Акция 24</td>
-            <td>$95</td>
+            <td>ВТБ</td>
+            <td>95</td>
             <td>2022-01-31</td>
+            <td>1,21</td>
         </tr>
         <tr>
-            <td>Акция 25</td>
-            <td>$50</td>
+            <td>Сбер</td>
+            <td>50</td>
             <td>2021-12-31</td>
+            <td>1,21</td>
         </tr>
         <tr>
-            <td>Акция 26</td>
-            <td>$75</td>
+            <td>ВТБ</td>
+            <td>75</td>
             <td>2021-11-30</td>
+            <td>1,21</td>
         </tr>
         <tr>
-            <td>Акция 27</td>
-            <td>$45</td>
+            <td>Сбер</td>
+            <td>45</td>
             <td>2021-10-31</td>
+            <td>1,21</td>
         </tr>
         <tr>
-            <td>Акция 28</td>
-            <td>$100</td>
+            <td>Сбер</td>
+            <td>100</td>
             <td>2021-09-30</td>
+            <td>7,21</td>
         </tr>
         <tr>
-            <td>Акция 29</td>
-            <td>$65</td>
+            <td>ВТБ</td>
+            <td>65</td>
             <td>2021-08-31</td>
+            <td>7,21</td>
         </tr>
         <tr>
-            <td>Акция 30</td>
-            <td>$85</td>
+            <td>Сбер</td>
+            <td>85</td>
             <td>2021-07-31</td>
+            <td>7,21</td>
         </tr>
         <tr>
-            <td>Акция 31</td>
-            <td>$120</td>
+            <td>Сбер</td>
+            <td>120</td>
             <td>2021-06-30</td>
+            <td>7,21</td>
         </tr>
         <tr>
-            <td>Акция 32</td>
-            <td>$70</td>
+            <td>ВТБ</td>
+            <td>70</td>
             <td>2021-05-31</td>
+            <td>7,21</td>
         </tr>
         <tr>
-            <td>Акция 33</td>
-            <td>$110</td>
+            <td>ВТБ</td>
+            <td>110</td>
             <td>2021-04-30</td>
+            <td>2,21</td>
         </tr>
         <tr>
-            <td>Акция 34</td>
-            <td>$60</td>
+            <td>Сбер</td>
+            <td>60</td>
             <td>2021-03-31</td>
+            <td>1,21</td>
         </tr>
         <tr>
-            <td>Акция 35</td>
-            <td>$90</td>
+            <td>Сбер</td>
+            <td>90</td>
             <td>2021-02-28</td>
+            <td>5,21</td>
         </tr>
         <tr>
-            <td>Акция 36</td>
-            <td>$80</td>
+            <td>Сбер</td>
+            <td>80</td>
             <td>2021-01-31</td>
+            <td>5,21</td>
         </tr>
         <tr>
-            <td>Акция 37</td>
-            <td>$50</td>
+            <td>Сбер</td>
+            <td>50</td>
             <td>2020-12-31</td>
+            <td>5,21</td>
         </tr>
         <tr>
-            <td>Акция 38</td>
-            <td>$70</td>
+            <td>Сбер</td>
+            <td>70</td>
             <td>2020-11-30</td>
+            <td>5,21</td>
         </tr>
         <tr>
-            <td>Акция 39</td>
-            <td>$45</td>
+            <td>Сбер</td>
+            <td>45</td>
             <td>2020-10-31</td>
+            <td>2,21</td>
         </tr>
         <tr>
-            <td>Акция 40</td>
-            <td>$100</td>
+            <td>Сбер</td>
+            <td>100</td>
             <td>2020-09-30</td>
+            <td>5,21</td>
         </tr>
         <tr>
-            <td>Акция 41</td>
-            <td>$65</td>
+            <td>ВТБ</td>
+            <td>65</td>
             <td>2020-08-31</td>
+            <td>5,21</td>
         </tr>
         <tr>
-            <td>Акция 42</td>
-            <td>$85</td>
+            <td>ДНС</td>
+            <td>85</td>
             <td>2020-07-31</td>
+            <td>1,21</td>
         </tr>
         <tr>
-            <td>Акция 43</td>
-            <td>$120</td>
+            <td>Сбер</td>
+            <td>120</td>
             <td>2020-06-30</td>
+            <td>5,91</td>
         </tr>
         <tr>
-            <td>Акция 44</td>
-            <td>$70</td>
+            <td>ДНС</td>
+            <td>70</td>
             <td>2020-05-31</td>
+            <td>5,91</td>
         </tr>
         <tr>
-            <td>Акция 45</td>
-            <td>$110</td>
+            <td>ВТБ</td>
+            <td>110</td>
             <td>2020-04-30</td>
+            <td>5,91</td>
         </tr>
         <tr>
-            <td>Акция 46</td>
-            <td>$60</td>
+            <td>ВТБ</td>
+            <td>60</td>
             <td>2020-03-31</td>
+            <td>5,91</td>
         </tr>
         <tr>
-            <td>Акция 47</td>
-            <td>$90</td>
+            <td>Сбер</td>
+            <td>90</td>
             <td>2020-02-29</td>
+            <td>2,91</td>
         </tr>
         <tr>
-            <td>Акция 48</td>
-            <td>$80</td>
+            <td>ВТБ</td>
+            <td>80</td>
             <td>2020-01-31</td>
+            <td>5,91</td>
         </tr>
         <tr>
-            <td>Акция 49</td>
-            <td>$50</td>
+            <td>ДНС</td>
+            <td>50</td>
             <td>2019-12-31</td>
+            <td>5,91</td>
         </tr>
         <tr>
-            <td>Акция 50</td>
-            <td>$70</td>
+            <td>ДНС</td>
+            <td>70</td>
             <td>2019-11-30</td>
+            <td>1,91</td>
         </tr>
     </table>
 
