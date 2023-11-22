@@ -1,0 +1,37 @@
+.main .header .wrapper {
+    font-size: 10;
+    width: 100%;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    color: black;
+}
+.header{
+    background: gainsboro;
+    width:100%;
+}
+.main a{
+    color:black;
+    padding: 5;
+}
+
+.main .wrapper .selected{
+    color: yellow;
+    background: gray;
+}
+
+.images {
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+}
+.images img {
+    max-width:100%;
+    min-width: auto;
+    min-height: auto;
+    height: 100%;
+}
+
+.talks {
+    display: table-column;
+}
