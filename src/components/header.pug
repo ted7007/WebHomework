@@ -1,0 +1,33 @@
+mixin createHeaderItem(ref, title)
+    a(href=ref)
+        h3 #{title}
+
+-
+    var headerElems = [
+        {
+            "ref": "/table.html",
+            "title": "Таблица"
+        },
+        {
+            "ref": "/about.html",
+            "title": "Информация"
+        },
+        {
+            "ref": "/",
+            "title": "Главная"
+        },
+        {
+            "ref": "/other",
+            "title": "Другая таблица"
+        },
+    ]
+
+.searchBlock
+    input
+    h 🔍
+.header
+    .wrapper
+        each elem in headerElems
+            +createHeaderItem(elem.ref, elem.title)
+
+    h.title Акции
