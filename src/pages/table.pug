@@ -1,4 +1,119 @@
 extends ../components/template.pug
 
 block content
-    h1 opa table
+    mixin createTextField(name)
+        p
+            label #{name} <br>
+            input(type="text")
+
+    mixin sortField(name)
+        .sortField
+            label #{name}
+            select
+                option Цена
+                option Дата окончия
+                option Наименование акции
+            label По убыванию?
+            input(type="checkbox") 
+
+    -
+        var table = [
+            {"Name":"ВТБ", "Price":"150", "Date":"12.06.2003", "Count":100},
+            {"Name":"Google", "Price":"2500", "Date":"10.02.2022", "Count":200},
+            {"Name":"Apple", "Price":"1800", "Date":"05.08.2023", "Count":150},
+            {"Name":"Microsoft", "Price":"1200", "Date":"20.11.2021", "Count":300},
+            {"Name":"Amazon", "Price":"3200", "Date":"15.04.2024", "Count":250},
+            {"Name":"Tesla", "Price":"700", "Date":"30.09.2025", "Count":400},
+            {"Name":"Facebook", "Price":"1500", "Date":"25.12.2026", "Count":180},
+            {"Name":"Netflix", "Price":"1600", "Date":"03.07.2027", "Count":220},
+            {"Name":"Samsung", "Price":"900", "Date":"18.10.2028", "Count":350},
+            {"Name":"Alibaba", "Price":"1300", "Date":"22.05.2029", "Count":270},
+            {"Name":"Tencent", "Price":"1100", "Date":"11.08.2030", "Count":320},
+            {"Name":"Toyota", "Price":"400", "Date":"29.03.2031", "Count":500},
+            {"Name":"Coca-Cola", "Price":"300", "Date":"17.06.2032", "Count":600},
+            {"Name":"Visa", "Price":"1800", "Date":"08.09.2033", "Count":250},
+            {"Name":"Walmart", "Price":"1500", "Date":"14.12.2034", "Count":300},
+            {"Name":"McDonald's", "Price":"900", "Date":"20.04.2035", "Count":450},
+            {"Name":"Nike", "Price":"1200", "Date":"01.11.2036", "Count":370},
+            {"Name":"PepsiCo", "Price":"750", "Date":"05.02.2037", "Count":480},
+            {"Name":"ExxonMobil", "Price":"850", "Date":"21.05.2038", "Count":420},
+            {"Name":"AT&T", "Price":"600", "Date":"10.09.2039", "Count":550},
+            {"Name":"Oracle", "Price":"1100", "Date":"23.12.2040", "Count":340},
+            {"Name":"Boeing", "Price":"1600", "Date":"13.03.2041", "Count":320},
+            {"Name":"Nestle", "Price":"1300", "Date":"09.07.2042", "Count":280},
+            {"Name":"L'Oréal", "Price":"1000", "Date":"15.10.2043", "Count":400},
+            {"Name":"IBM", "Price":"1400", "Date":"04.04.2044", "Count":290},
+            {"Name":"General Electric", "Price":"800", "Date":"11.08.2045", "Count":420},
+            {"Name":"Berkshire Hathaway", "Price":"2500", "Date":"20.12.2046", "Count":180},
+            {"Name":"Uber", "Price":"700", "Date":"28.03.2047", "Count":470},
+            {"Name":"Netflix", "Price":"1600", "Date":"03.07.2048", "Count":220},
+            {"Name":"Samsung", "Price":"900", "Date":"18.10.2049", "Count":350},
+            {"Name":"Alibaba", "Price":"1300", "Date":"22.05.2050", "Count":270},
+            {"Name":"Tencent", "Price":"1100", "Date":"11.08.2051", "Count":320},
+            {"Name":"Toyota", "Price":"400", "Date":"29.03.2052", "Count":500},
+            {"Name":"Coca-Cola", "Price":"300", "Date":"17.06.2053", "Count":600},
+            {"Name":"Visa", "Price":"1800", "Date":"08.09.2054", "Count":250},
+            {"Name":"Walmart", "Price":"1500", "Date":"14.12.2055", "Count":300},
+            {"Name":"McDonald's", "Price":"900", "Date":"20.04.2056", "Count":450},
+            {"Name":"Nike", "Price":"1200", "Date":"01.11.2057", "Count":370},
+            {"Name":"PepsiCo", "Price":"750", "Date":"05.02.2058", "Count":480},
+            {"Name":"ExxonMobil", "Price":"850", "Date":"21.05.2059", "Count":420},
+            {"Name":"AT&T", "Price":"600", "Date":"10.09.2060", "Count":550},
+            {"Name":"Oracle", "Price":"1100", "Date":"23.12.2061", "Count":340},
+            {"Name":"Boeing", "Price":"1600", "Date":"13.03.2062", "Count":320},
+            {"Name":"Nestle", "Price":"1300", "Date":"09.07.2063", "Count":280},
+            {"Name":"L'Oréal", "Price":"1000", "Date":"15.10.2064", "Count":400},
+            {"Name":"IBM", "Price":"1400", "Date":"04.04.2065", "Count":290}
+            ]
+    details 
+        summary График
+
+        h3 Значение по оси OX
+        ul
+            li
+                input(type="radio")
+                label Наименование акции
+
+        h3 Результат
+        ul 
+            li 
+                input(type="checkbox")
+                label Максимальная Цена
+            li
+                input(type="checkbox")
+                label Количество покупок
+        
+        input(type="submit" value="Построить")
+        p Тут График
+
+    details 
+        summary Фильтр
+        form
+            +createTextField("Название:")
+            +createTextField("Цена от:")
+            +createTextField("Цена до:")
+            +createTextField("Дата от:")
+            +createTextField("Дата до:")
+            input(type="submit" value="найти")
+
+    details 
+        summary Сортировка
+        form
+            +sortField("Первый урвоень:") 
+            +sortField("Второй урвоень:") 
+            +sortField("Третий урвоень:") 
+            input(type="submit" value="Сортировать")
+
+    table(cellspacing="0" border="1")
+        tr
+            td Наименование акции
+            td Цена
+            td Дата окончания
+            td Количество покупок, тыс
+        
+        each row in table
+            tr 
+                td #{row.Name}
+                td #{row.Price}
+                td #{row.Date}
+                td #{row.Count}
