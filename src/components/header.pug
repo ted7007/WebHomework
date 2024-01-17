@@ -1,12 +1,16 @@
 mixin createHeaderItem(ref, title)
     a(href=ref)
-        h3 #{title}
+        if(selected == title)
+            h3.selected #{title}
+        else
+            h3 #{title}
+        
 
 -
     var headerElems = [
         {
             "ref": "/",
-            "title": "Главная"
+            "title": "Главная",
         },
         {
             "ref": "/table.html",

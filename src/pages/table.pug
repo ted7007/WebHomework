@@ -1,5 +1,7 @@
 extends ../components/template.pug
-
+append header 
+  - var selected = "Сводка акций";
+  include ../components/header.pug
 block content
     mixin createTextField(name)
         p

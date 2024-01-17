@@ -1,4 +1,7 @@
 extends components/template.pug
-
+append header 
+  - var selected = "Главная";
+  
+  include components/header.pug
 block content
   include components/main

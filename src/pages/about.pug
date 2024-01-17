@@ -1,4 +1,7 @@
 extends ../components/template.pug
+append header 
+  - var selected = "Информация";
+  include ../components/header.pug
 block content
     h1.market-header Рынок акций
 
