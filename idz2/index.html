@@ -1,0 +1,52 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="task">
+        <img id="img" width=200 src="ab.png">
+        <div class="input">
+            <form>
+                <p>
+                    Входные данные: <br>
+                    <label><input type="radio" checked name="isCatets" id="inputab"> катет a и катет b</label></br>
+                    <label><input type="radio" name="isCatets" id="inputac"> катет a и гипотенуза c</label></br></br>
+                    <input type="button" value="Показать" onClick="showImg(this.form)">
+                </p>
+                <p>
+                    <label>a =
+                        <input type="number" id="input1" min=0 max=200>
+                    </label>
+                </p>
+                <p id="b">
+                    <label>b =
+                        <input type="number" id="input2" min=0 max=200>
+                    </label>
+                </p>
+                <p id="c" class="off">
+                    <label >c =
+                        <input  type="number" id="input3" min=0 max=200>
+                    </label>
+                </p>
+                <p id="checkboxes">
+                    Найти: <br>
+                    <label><input type="checkbox" id="task1"> радиус вписанной окружности</label></br>
+                    <label><input type="checkbox" id="task2"> медианы</label></br>
+                    <label><input type="checkbox" id="task3"> периметр</label>
+                </p>
+                <p>
+                    <input type="button" value="Вычислить" onClick="calculate(this.form)">
+                    <input type="button" value="Очистить" onClick="clearfunc()">
+                </p>
+            </form>
+        </div>
+        <div id="output">
+        </div>
+    </div>
+</body>
+<script src="program.js"> </script>
+
+</html>
