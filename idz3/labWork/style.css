@@ -1,0 +1,26 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: #f9f9f9; /* Цвет фона таблицы */
+}
+
+th {
+    font-weight: bold; /* Жирный шрифт для заголовков */
+    background-color: #333; /* Цвет фона заголовков */
+    color: white; /* Цвет текста заголовков */
+    border: 1px solid #333; /* Границы для заголовков */
+}
+
+td {
+    border: 1px solid #333; /* Границы для ячеек таблицы */
+    padding: 8px; /* Отступ внутри ячеек */
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2; /* Цвет фона четных строк таблицы */
+}
+
+.forms {
+    display: flex;
+    gap: 40px
+}

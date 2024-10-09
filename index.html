@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Пример страницы</title>
+</head>
+<body>
+    <h3>Языки программирования</h3>
+    <div class="test">
+        <ol class="test">kkkk</ol>
+    </div>
+    <div>C</div>
+    <div><a href="#">Java</a></div>
+    <h3 class="bold big">История создания</h3>
+    <div class="bold test">
+        <div>Python создан ...</div>
+        <div>C создан ...</div>
+        <div>Java создан ...</div>
+        <div>Javascript создан ...</div>
+        <div>Prolog создан ...</div>
+    </div>
+    <h3>Разработчики</h3>
+    <ol class="test">
+        <li>
+            Брендан Айк</li>
+    </ol>
+
+    <p>
+        Классы для преобразования:
+        <li>
+            test
+        </li>
+        <li>
+            bold big
+        </li>
+        <li>
+            bold test
+        </li>
+    </p>
+    <input type="text" id="userInput" placeholder="Введите название класса для преобразования">
+    <button onclick="sayHello()">Нажми, чтобы произвести чудо</button>
+
+    <script>
+        let input = document.getElementById("userInput");
+
+        input.addEventListener("keyup", function(event) {
+            if (event.key === "Enter") {
+                sayHello();
+            }
+        });
+        
+        function sayHello() {
+            let userInput = document.getElementById("userInput").value;
+            console.log('started: '+ userInput)
+            let classElements = document.getElementsByClassName(userInput);
+            if(!classElements || classElements.length == 0)
+            {
+                console.log("втираешь какую-то дичь")
+                return;
+            }
+            for(let i = 0; i < classElements.length; i++)
+                changeElement(classElements[i])
+        }
+
+        function changeElement(element){
+            let countChildren = element.children.length;
+            console.log("count children: "+countChildren)
+            if(countChildren == 3)
+                return;
+            if(countChildren == 0)
+                addChildren(element)
+            else if(countChildren < 3)
+                cloneChildren(element, countChildren)
+            else
+                killWeakChildren(element, countChildren)    
+        }
+
+        function addChildren(element)
+        {
+            for (let i = 0; i < 3; i++) {
+                let newDiv = document.createElement("div");
+                newDiv.textContent = "новый текст";
+                element.appendChild(newDiv);
+            }
+        }
+
+        function cloneChildren(element, count)
+        {
+            for(let i = 0; i + count < 3; i++)
+            {
+                let template = element.children[0].cloneNode(true);
+                element.appendChild(template);
+                console.log('cloned children');
+            }
+        }
+
+        function killWeakChildren(element, count){
+            for(let i = 0; count - i > 3; i++)
+            {
+                let template = element.children.item(3)
+                element.removeChild(template);
+                console.log('deleted children');
+            }
+        }
+    </script>
+</body>
+</html>
